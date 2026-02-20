@@ -1,0 +1,6 @@
+- When a long quote is displayed, the container grows larger. It then fails to resize properly
+for smaller quotes. Will fix soon
+
+- Clean html tags in quotes and authors (or maybe display them properly)
+
+- Clean some quotes's authors. They are too long

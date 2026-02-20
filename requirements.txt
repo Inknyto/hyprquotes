@@ -1,0 +1,10 @@
+# hyprquotes — Python dependencies
+#
+# GTK3, Cairo and wl-clipboard are system packages and cannot be installed
+# via pip. See README.md for distro-specific install commands.
+#
+# The packages below are listed for completeness / tooling compatibility.
+# PyGObject and pycairo are typically provided by your distro's package manager.
+
+PyGObject>=3.42.0
+pycairo>=1.20.0
