@@ -1,0 +1,38 @@
+# Maintainer: Your Name <you@example.com>
+pkgname=hyprquotes
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Floating programming quote overlay for Hyprland"
+arch=('any')
+url="https://github.com/Inknyto/hyprquotes"
+license=('MIT')
+depends=(
+  'python'
+  'python-gobject'
+  'gtk3'
+  'python-cairo'
+  'wl-clipboard'
+  'hyprland'
+)
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('SKIP')   # replace with real checksum before publishing
+
+package() {
+  cd "$pkgname-$pkgver"
+
+  # Application
+  install -Dm644 hyprquotes.py "$pkgdir/usr/share/hyprquotes/hyprquotes.py"
+
+  # Default quotes (only used if ~/.config/hyprquotes/ doesn't exist)
+  install -Dm644 assets/programming-quotes.json \
+    "$pkgdir/usr/share/hyprquotes/assets/programming-quotes.json"
+
+  # Launcher
+  install -Dm755 /dev/stdin "$pkgdir/usr/bin/hyprquotes" <<'EOF'
+#!/usr/bin/env bash
+exec python3 /usr/share/hyprquotes/hyprquotes.py "$@"
+EOF
+
+  # License
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
