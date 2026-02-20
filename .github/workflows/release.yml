@@ -1,3 +1,4 @@
+# ~/Documents/git/hyprquotes/.github/workflows/release.yml 20 Feb at 03:14:25 AM
 name: Release
 
 on:
@@ -45,8 +46,8 @@ jobs:
           mkdir -p "${DIST}/assets"
 
           cp hyprquotes.py   "${DIST}/"
-          cp install.sh      "${DIST}/"
-          cp uninstall.sh    "${DIST}/"
+          cp workflow/install.sh      "${DIST}/"
+          cp workflow/uninstall.sh    "${DIST}/"
           cp README.md       "${DIST}/"
           cp LICENSE         "${DIST}/"
           cp requirements.txt "${DIST}/"
