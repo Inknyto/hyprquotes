@@ -5,11 +5,6 @@ for smaller quotes. Will fix soon
 
 - Clean some quotes's authors. They are too long
 
-test on clean arch install (or clean chroot that allows gui)
-
-add python-gobject as a archlinux dependency
-add python-cairo as a dependency
-fix permission denied /usr/local/share/hyprquotes/assets
 add 'clipboard not working' message to the code itself
 set the package for archlinux only for the moment 
 add functionnality to not execute the script twice
