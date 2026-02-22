@@ -86,9 +86,9 @@ check_hyprctl
 info "Installing to $INSTALL_DIR ..."
 
 if $USER_INSTALL; then
-  mkdir -p "$INSTALL_DIR" "$BIN_DIR"
+  mkdir -p "$INSTALL_DIR" "$INSTALL_DIR/assets" "$BIN_DIR"
 else
-  sudo mkdir -p "$INSTALL_DIR" "$BIN_DIR"
+  sudo mkdir -p "$INSTALL_DIR" "$INSTALL_DIR/assets" "$BIN_DIR"
 fi
 
 # Copy application files
@@ -100,7 +100,7 @@ else
   sudo chmod 644 "$INSTALL_DIR/hyprquotes.py"
 fi
 
-# Copy default quotes file (only if user doesn't already have one)
+# Copy default quotes file to user config (never requires sudo — always user-owned)
 mkdir -p "$QUOTES_DEST"
 if [[ ! -f "$QUOTES_DEST/programming-quotes.json" ]]; then
   cp assets/programming-quotes.json "$QUOTES_DEST/programming-quotes.json"

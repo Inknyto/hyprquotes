@@ -1,3 +1,5 @@
-# ~/Documents/git/hyprquotes/.gitignore 20 Feb at 02:21:14 AM
+# ~/Documents/git/hyprquotes/.gitignore 22 Feb at 01:12:09 AM
 hyprquotes-venv
+files_from_claude/
 assets/demo.mp4
+test_release/

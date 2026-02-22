@@ -3,14 +3,14 @@ pkgname=hyprquotes
 pkgver=1.0.0
 pkgrel=1
 pkgdesc="Floating programming quote overlay for Hyprland"
-arch=('any')
-url="https://github.com/Inknyto/hyprquotes"
+arch=('x86_64')
+url="https://github.com/yourusername/hyprquotes"
 license=('MIT')
 depends=(
   'python'
   'python-gobject'
-  'gtk3'
   'python-cairo'
+  'gtk3'
   'wl-clipboard'
   'hyprland'
 )
