@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ~/Documents/git/hyprquotes/workflow/install.sh 22 Feb at 01:36:45 AM
+# ~/Documents/git/hyprquotes/workflow/install.sh 22 Feb at 01:56:27 AM
 # hyprquotes installer
 # Usage: ./install.sh [--prefix /usr/local] [--user]
 
@@ -68,6 +68,12 @@ check_gtk() {
   fi
 }
 
+check_cairo() {
+  if ! python3 -c "import cairo" &>/dev/null; then
+    error "python-cairo not installed (cairo module missing).\n  Arch:   sudo pacman -S python-cairo\n  Debian: sudo apt install python3-cairo"
+  fi
+}
+
 check_wl_copy() {
   if ! command -v wl-copy &>/dev/null; then
     warn "wl-copy not found — clipboard support will be disabled."
@@ -85,6 +91,7 @@ check_hyprctl() {
 check_python
 check_gi
 check_gtk
+check_cairo
 check_wl_copy
 check_hyprctl
 
