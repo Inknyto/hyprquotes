@@ -13,3 +13,4 @@ fix permission denied /usr/local/share/hyprquotes/assets
 add clipboard not working to the code itself
 set the package fro archlinux only for the moment 
 add functionnality to not execute the script twice
+test other installation methods

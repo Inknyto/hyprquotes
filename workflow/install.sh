@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# ~/Documents/git/hyprquotes/workflow/install.sh 22 Feb at 01:36:45 AM
 # hyprquotes installer
 # Usage: ./install.sh [--prefix /usr/local] [--user]
 
@@ -57,8 +58,13 @@ check_gi() {
 }
 
 check_gtk() {
+  # Step 1: verify python-gobject is recent enough to have gi.require_version
+  if ! python3 -c "import gi; gi.require_version" &>/dev/null; then
+    error "python-gobject not installed or too old (gi.require_version missing).\n  Arch:   sudo pacman -S python-gobject\n  Debian: sudo apt install python3-gi"
+  fi
+  # Step 2: verify the GTK3 typelib is present (separate package from python-gobject)
   if ! python3 -c "import gi; gi.require_version('Gtk','3.0'); from gi.repository import Gtk" &>/dev/null; then
-    error "GTK3 GI bindings not found.\n  Arch:   sudo pacman -S gtk3\n  Debian: sudo apt install gir1.2-gtk-3.0"
+    error "GTK3 GI typelib not found (python-gobject is installed, but GTK3 bindings are missing).\n  Arch:   sudo pacman -S gtk3\n  Debian: sudo apt install gir1.2-gtk-3.0"
   fi
 }
 
