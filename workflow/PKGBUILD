@@ -1,11 +1,12 @@
-# Maintainer: Your Name <you@example.com>
+# ~/Documents/git/hyprquotes/workflow/PKGBUILD 22 Feb at 04:56:53 AM
+# Maintainer: Inknyto <mbaye.sene.etu@esmt.sn>
 pkgname=hyprquotes
 pkgver=1.0.0
 pkgrel=1
 pkgdesc="Floating programming quote overlay for Hyprland"
 arch=('x86_64')
-url="https://github.com/yourusername/hyprquotes"
-license=('MIT')
+url="https://github.com/Inknyto/hyprquotes"
+license=('GPL-2.0-only')
 depends=(
   'python'
   'python-gobject'
@@ -15,7 +16,7 @@ depends=(
   'hyprland'
 )
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('SKIP')   # replace with real checksum before publishing
+sha256sums=('fab8d198e7cc08a71bed3f1573ec3b4ff6bd41af5a0881c279d70029c1902b0e')
 
 package() {
   cd "$pkgname-$pkgver"
