@@ -10,3 +10,4 @@ set the package for archlinux only for the moment
 add functionnality to not execute the script twice
 test other installation methods
 add already installed check to uninstall.sh
+publish to gitlab
