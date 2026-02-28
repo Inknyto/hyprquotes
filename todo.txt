@@ -11,3 +11,4 @@ add functionnality to not execute the script twice
 test other installation methods
 add already installed check to uninstall.sh
 publish to gitlab
+fix window opening two times at first boot
